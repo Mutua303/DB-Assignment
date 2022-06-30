@@ -1,0 +1,3 @@
+QUESTION.1 Write a query to return the list of movies and their genres.
+
+sqlite> SELECT movies.title,genres.genres.genre FROM movies LEFT JOIN genres ON movies.id=genres.id;
