@@ -1,0 +1,20 @@
+QUESTION 1.WRITE A QUERY THAT RETURNS FIVE MOVIES WITH THE HIGHEST RATING.
+
+sqlite> SELECT sh.title FROM shows sh, ratings r WHERE r.show_id = sh.id ORDER BY r.rating DESC LIMIT 5;
+Second Chance
+Karadjordje i pozoriste
+Heartland
+Kelly James & The Folk Review
+Forgotten Internet
+Run Time: real 0.315 user 0.046875 sys 0.046875
+
+QUESTION 2.WRITE A QUERY THAT RETURNS ALL THE GENRES OF MOVIES ACTED BY ROBERT DOWNEY Jr.
+
+sqlite> SELECT genre FROM genres WHERE show_id IN(SELECT show_id FROM stars WHERE person_id IN(SELECT id FROM people WHERE name LIKE "%Robert Downey Jr.%"));
+Talk-Show
+Talk-Show
+Comedy
+Documentary
+News
+Talk-Show
+Documentary
